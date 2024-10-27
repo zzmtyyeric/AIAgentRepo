@@ -1,7 +1,7 @@
 {
-    "github_token": "xxxxxxxxx",
+    "github_token": "xxxx",
     "notification_settings": {
-        "email": "your_email@example.com",
+        "email": "zhimin0125z@gmail.com",
         "slack_webhook_url": "your_slack_webhook_url"
     },
     "subscriptions_file": "subscriptions.json",
