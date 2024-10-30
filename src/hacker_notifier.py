@@ -4,22 +4,22 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from logger import LOG
 
-class Notifier:
+class HackerNotifier:
     def __init__(self, email_settings):
         self.email_settings = email_settings
     
-    def notify(self, repo, report):
+    def notify(self,  report):
         if self.email_settings:
-            self.send_email(repo, report)
+            self.send_email( report)
         else:
             LOG.warning("邮件设置未配置正确，无法发送通知")
     
-    def send_email(self, repo, report):
+    def send_email(self, report):
         LOG.info("准备发送邮件")
         msg = MIMEMultipart()
         msg['From'] = self.email_settings['from']
         msg['To'] = self.email_settings['to']
-        msg['Subject'] = f"[GitHubSentinel]{repo} 进展简报"
+        msg['Subject'] = f"[HackerNews] 进展简报"
         
         # 将Markdown内容转换为HTML
         html_report = markdown2.markdown(report)
@@ -37,7 +37,7 @@ class Notifier:
 if __name__ == '__main__':
     from config import Config
     config = Config()
-    notifier = Notifier(config.email)
+    notifier = HackerNotifier(config.email)
 
     test_repo = "DjangoPeng/openai-quickstart"
     test_report = """
@@ -55,4 +55,4 @@ if __name__ == '__main__':
 - 关闭了一些未解决的问题。
 
 """
-    notifier.notify(test_repo, test_report)
+    notifier.notify(test_report)

@@ -4,7 +4,7 @@ import os
 from datetime import date, timedelta
 from logger import LOG  # 导入日志模块，用于记录日志信息
 
-class ReportGenerator:
+class HackerReportGenerator:
     def __init__(self, llm):
         self.llm = llm  # 初始化时接受一个LLM实例，用于后续生成报告
 
