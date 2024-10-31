@@ -34,7 +34,7 @@ def main():
     config = Config()  # 创建配置实例
     hacker_client = HackerClient()  # 创建GitHub客户端实例
     notifier = HackerNotifier(config.email)  # 创建通知器实例
-    llm = LLM()  # 创建语言模型实例
+    llm = LLM(config)  # 创建语言模型实例
     report_generator = HackerReportGenerator(llm)  # 创建报告生成器实例
 
     # 启动时立即执行（如不需要可注释）
