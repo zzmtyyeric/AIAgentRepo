@@ -1,6 +1,6 @@
 requests
-openai
 gradio
 loguru
-schedule
 markdown2
+openai
+schedule

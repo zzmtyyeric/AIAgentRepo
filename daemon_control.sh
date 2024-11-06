@@ -2,7 +2,7 @@
 # 守护进程控制脚本
 
 # 定义守护进程 Python 脚本的路径
-DAEMON_PATH="./src/daemon_processHacker.py"
+DAEMON_PATH="./src/daemon_process.py"
 # 定义守护进程的名称
 DAEMON_NAME="DaemonProcess"
 # 定义日志文件的路径
